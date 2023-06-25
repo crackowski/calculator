@@ -15,18 +15,23 @@ body {
     flex-direction: column;
 }
 .buttons {
+    border: 15px solid black;
+    background-color: black;
     height: 350px;
     width: 338px;
     display: flex;
     flex-wrap: wrap;
 }
 .display {
+    border: 15px solid black;
     height: 150px;
     width: 338px;;
+    font-size: 25px;
 }
 button {
+    border-radius: 5px;
     font-weight: 700;
-    background-color: rgb(72, 211, 245);
+    background-color: rgb(237, 115, 54);
     font-size: large;
     padding: 30px;
     flex-grow: 1;

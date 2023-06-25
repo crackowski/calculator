@@ -52,6 +52,7 @@ let displayValue = document.querySelector(".display");
 
 let operators = Array.from(document.querySelectorAll(".container .buttons .operator"));
 let equals = document.querySelector(".equals");
+let clearButton = document.querySelector(".clear");
 
 // Add event listener to digits
 
@@ -76,9 +77,15 @@ digits.forEach(digit => {
 
 operators.forEach(op => {
     op.addEventListener("click", () => {
+        if(firstNum !== 0 && secondNum !== 0){
+            displayValue.textContent = operate(firstNum, operator, secondNum);
+            firstNum = +displayValue.textContent;
+            secondNum = 0;
+            operator = op.textContent;
+        }else{
             operator = op.textContent;
             console.log(operator);
-        
+        }
     })
 });
 
@@ -93,3 +100,9 @@ equals.addEventListener("click", () => {
     }
 })
 
+clearButton.addEventListener("click", () => {
+    displayValue.textContent = "";
+    operator = undefined;
+    firstNum = 0;
+    secondNum = 0;
+})
