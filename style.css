@@ -7,6 +7,7 @@
 }
 body {
     height: 100vh;
+    background-color: #333333;
 }
 button {
     border-radius: 5px;
@@ -22,7 +23,7 @@ button:hover {
 }
 .clear {
     flex-grow: 0;
-    padding: 26px;
+    padding: 25px;
 }
 .operator {
     background-color: #ECA72C;
@@ -43,10 +44,14 @@ button:hover {
     width: 338px;
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 
 .display {
+    color: white;
     border: 15px solid black;
     height: 150px;
     width: 338px;;
@@ -55,4 +60,8 @@ button:hover {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-weight: 700;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
 }
