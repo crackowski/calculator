@@ -47,10 +47,10 @@ function operate(firstNum, operator, secondNum){
 
 console.log(operate(5, "*", 5));
 
-let digits = Array.from(document.querySelectorAll(".container .buttons .digit"));
+let digits = Array.from(document.querySelectorAll(".digit"));
 let displayValue = document.querySelector(".display");
 
-let operators = Array.from(document.querySelectorAll(".container .buttons .operator"));
+let operators = Array.from(document.querySelectorAll(".operator"));
 let equals = document.querySelector(".equals");
 let clearButton = document.querySelector(".clear");
 
@@ -77,14 +77,16 @@ digits.forEach(digit => {
 
 operators.forEach(op => {
     op.addEventListener("click", () => {
-        if(firstNum !== 0 && secondNum !== 0){
-            displayValue.textContent = operate(firstNum, operator, secondNum);
-            firstNum = +displayValue.textContent;
-            secondNum = 0;
-            operator = op.textContent;
-        }else{
-            operator = op.textContent;
-            console.log(operator);
+        if(displayValue.textContent !== ""){
+            if(firstNum !== 0 && secondNum !== 0){
+                displayValue.textContent = operate(firstNum, operator, secondNum);
+                firstNum = +displayValue.textContent;
+                secondNum = 0;
+                operator = op.textContent;
+            }else{
+                operator = op.textContent;
+                console.log(operator);
+            }
         }
     })
 });
